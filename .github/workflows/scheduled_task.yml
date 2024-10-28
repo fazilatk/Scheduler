@@ -2,7 +2,7 @@ name: Daily Scheduled Task
 
 on:
   schedule:
-    - cron: '40 6 * * *'  # Runs daily at 12:00 UTC
+    - cron: '50 6 * * *'  # Runs daily at 12:00 IST
 
 jobs:
   run-task:
@@ -12,6 +12,6 @@ jobs:
       - name: Run Python script
         run: |
           echo "Running daily task!"
-          python -c "print('Hello world')"
+          
           # Your Python code or script execution here
-          # Example: python -c "print('Hello, GitHub Actions!')"
+          python -c "print('Hello, GitHub Actions!')"
