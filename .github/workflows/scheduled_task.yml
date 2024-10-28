@@ -1,17 +1,12 @@
-name: Daily Scheduled Task
+name: Daily Job
 
 on:
   schedule:
-    - cron: '50 6 * * *'  # Runs daily at 12:00 IST
+    - cron: '0 7 * * *'
 
 jobs:
-  run-task:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Run Python script
-        run: |
-          echo "Running daily task!"
-          
-          # Your Python code or script execution here
-          python -c "print('Hello, GitHub Actions!')"
+      - uses: actions/checkout@v3
+      - run: echo "Hello, World!"
