@@ -17,9 +17,9 @@ jobs:
         with:
           python-version: '3.12'  # Specify your Python version, e.g., '3.8'
 
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt  # Install dependencies if you have any
+      #- name: Install dependencies
+      #  run: |
+      #    pip install -r requirements.txt  # Install dependencies if you have any
 
       - name: Run Python script
         run: python pf2.py  # Make sure the script is in the root directory or adjust the path accordingly
