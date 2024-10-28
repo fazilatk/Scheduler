@@ -124,7 +124,7 @@ while True:
 
 if __name__=='__main__':
     # Define the path and current date
-    path = 'C:/Users/sachi/Documents/DataExtraction/PROPERTYFINDER/'
+    path = ''
     today = dt.now().strftime('%Y-%m-%d')
 
     # Create a DataFrame from new data
