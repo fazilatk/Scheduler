@@ -1,8 +1,8 @@
-name: Run Python Script Daily
+name: Schedule Python Script
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/10 * * * *'  # Runs every Monday at 6:45 AM UTC (12:15 PM IST)
 
 jobs:
   run-python-script:
@@ -15,11 +15,11 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'  # Specify your Python version
+          python-version: '3.12'  # Specify your Python version, e.g., '3.8'
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt  # If you have dependencies
+          pip install -r requirements.txt  # Install dependencies if you have any
 
       - name: Run Python script
-        run: pf2.py  # Replace 'script.py' with your filename
+        run: python pf2.py  # Make sure the script is in the root directory or adjust the path accordingly
