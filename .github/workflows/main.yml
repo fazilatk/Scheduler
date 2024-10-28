@@ -22,4 +22,4 @@ jobs:
           pip install -r requirements.txt  # Install dependencies if you have any
 
       - name: Run Python script
-        run: python pf22.py  # Make sure the script is in the root directory or adjust the path accordingly
+        run: python pf2.py  # Make sure the script is in the root directory or adjust the path accordingly
