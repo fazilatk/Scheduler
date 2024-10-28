@@ -124,7 +124,7 @@ while True:
 
 if __name__=='__main__':
     # Define the path and current date
-    path = 'fazilatk/Scheduler/'
+    path = ''
     today = dt.now().strftime('%Y-%m-%d')
 
     # Create a DataFrame from new data
@@ -153,6 +153,7 @@ if __name__=='__main__':
     except FileNotFoundError:
         # If the file does not exist, create a new one
         new_data.to_csv(f"{path}pf.csv", index=False)
-
+import os
+print(os.getcwd())
 
 
