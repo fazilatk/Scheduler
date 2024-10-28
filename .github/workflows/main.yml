@@ -23,3 +23,12 @@ jobs:
 
       - name: Run Python script
         run: python pf2.py  # Make sure the script is in the root directory or adjust the path accordingly
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-output
+          path: |
+            /home/runner/work/Scheduler/Scheduler/pf.csv
+            /home/runner/work/Scheduler/Scheduler/pf2024-10-28.csv
+
