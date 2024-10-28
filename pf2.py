@@ -154,6 +154,3 @@ if __name__=='__main__':
         # If the file does not exist, create a new one
         new_data.to_csv(f"{path}pf.csv", index=False)
 
-import os
-print(os.getcwd())
-
