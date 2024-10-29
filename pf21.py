@@ -125,20 +125,18 @@ while True:
 import os
 
 if __name__ == '__main__':
-    # Get the GitHub workspace directory
+    # Define the path to the output directory in the workspace
     workspace = os.environ.get('GITHUB_WORKSPACE', os.getcwd())
-    path = os.path.join(workspace, 'output')  # Define the path to the output directory
+    path = os.path.join(workspace, 'output')  
 
-    # Create the output directory if it doesn't exist
+    # Ensure the output directory exists
     os.makedirs(path, exist_ok=True)
 
     # Get today's date
     today = dt.now().strftime('%Y-%m-%d')
 
-    # Create a DataFrame from new data
+    # Example of saving a CSV file to the output directory
     new_data = pd.DataFrame(property_data)
-
-    # Save the DataFrame to a CSV file in the output directory
     new_data.to_csv(os.path.join(path, f'pf{today}.csv'), index=False)
 
     try:
