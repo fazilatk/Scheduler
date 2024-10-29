@@ -2,7 +2,7 @@ name: Scheduled Python Script with folder
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Adjust the cron schedule as needed
+    - cron: '*/10 * * * *'  # Runs every hour; adjust as needed
 
 jobs:
   run_script:
@@ -14,12 +14,23 @@ jobs:
       - name: Set Up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8'
+          python-version: '3.x'
 
       - name: Install Dependencies
         run: |
-          pip install -r requirements.txt  # Ensure you have this file if you have dependencies
+          pip install -r requirements.txt  
 
       - name: Run Python Script
         run: |
           python pf21.py 
+
+      - name: Commit and Push Output Files
+        if: success()
+        run: |
+          git config --local user.name "github-actions"
+          git config --local user.email "github-actions@github.com"
+          git add output/
+          git commit -m "Add output files from scheduled run"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
