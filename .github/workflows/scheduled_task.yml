@@ -2,7 +2,7 @@ name: Schedule Python Script
 
 on:
   schedule:
-    - cron: '*/10 * * * 1'  # Runs every Monday at 6:45 AM UTC (12:15 PM IST)
+    - cron: '*/10 * * * 2'  # Runs every Monday at 6:45 AM UTC (12:15 PM IST)
 
 jobs:
   run-python-script:
