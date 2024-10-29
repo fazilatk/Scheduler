@@ -28,4 +28,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: my-output
-          path: /home/runner/work/Scheduler/Scheduler/output/
+          path: /home/runner/work/Scheduler/Scheduler/
