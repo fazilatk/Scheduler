@@ -2,7 +2,7 @@ name: Scheduled Python Script with folder
 
 on:
   schedule:
-    - cron: '*/10 * * * *'  # Runs every hour (you can adjust this)
+    - cron: '0 * * * *'  # Adjust the cron schedule as needed
 
 jobs:
   run_script:
@@ -18,16 +18,8 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install -r requirements.txt
+          pip install -r requirements.txt  # Ensure you have this file if you have dependencies
 
       - name: Run Python Script
         run: |
-          pf21.py
-
-      - name: Commit Output Files
-        run: |
-          git config --local user.name "github-actions"
-          git config --local user.email "github-actions@github.com"
-          git add output/
-          git commit -m "Add output files"
-          git push
+          python pf21.py 
