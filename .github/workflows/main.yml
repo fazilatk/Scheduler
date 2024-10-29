@@ -2,7 +2,7 @@ name: Web scraping Script Schedule
 
 on:
   schedule:
-    - cron: '*/10 * * * *' 
+    - cron: '*/10 * * * 2' 
 
 jobs:
   run-python-script:
