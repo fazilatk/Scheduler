@@ -1,0 +1,31 @@
+name: Web scraping Script Schedule
+
+on:
+  schedule:
+    - cron: '*/10 * * * *' 
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'  # Specify your Python version, e.g., '3.8'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt  # Install dependencies if you have any
+
+      - name: Run Python script
+        run: python pf2.py  # Make sure the script is in the root directory or adjust the path accordingly
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-output
+          path: /home/runner/work/Scheduler/Scheduler/
