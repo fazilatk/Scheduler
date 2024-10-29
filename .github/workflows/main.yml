@@ -28,7 +28,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: my-output
-          path: |
-            /home/runner/work/Scheduler/Scheduler/pf.csv
-            /home/runner/work/Scheduler/Scheduler/pf2024-10-29.csv
+          path: /home/runner/work/Scheduler/Scheduler/
 
