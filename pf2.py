@@ -124,7 +124,7 @@ while True:
 
 if __name__=='__main__':
     # Define the path and current date
-    path = '/home/runner/work/Scheduler/Scheduler/output/'
+    path = ''
     today = dt.now().strftime('%Y-%m-%d')
 
     # Create a DataFrame from new data
